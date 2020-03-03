@@ -35,10 +35,10 @@ I also made enabling/disabling and configuration of the SQL Injection detections
 
 
 I suggest you take the following steps to implement this class:
-	1) Get the SQLExtensions.cs class file into a project in your code base. You will also need the CustomExceptions.cs class file.  The program.cs just contains a sample usage and there is also a UnitTest1.cs class.
-	2) Comment out all the lines in ReallyValidateSQL except for the "return true"
-	3) Do a find an replace across your entire code base to replace ExecuteReader with ExecuteSafeReader
-	4) Compile and test.  Your app should still work exactly the same at this point.
-	5) Review the Customizable Validation Properties and decided which ones you want to implement, then uncomment the lines you commented out in ReallyValidateSQL 
-	6) Decide if you need to and want to replace dynamically constructed SQL in your application with any of the four FormatSQL… extension methods provided.
-Provide me feedback
+1. Get the SQLExtensions.cs class file into a project in your code base. You will also need the CustomExceptions.cs class file.  The program.cs just contains a sample usage and there is also a UnitTest1.cs class.
+2. Comment out all the lines in ReallyValidateSQL except for the "return true"
+3. Do a find an replace across your entire code base to replace ExecuteReader with ExecuteSafeReader
+4. Compile and test.  Your app should still work exactly the same at this point.
+5. Review the Customizable Validation Properties and decided which ones you want to implement, then uncomment the lines you commented out in ReallyValidateSQL 
+6. Decide if you need to and want to replace dynamically constructed SQL in your application with any of the four FormatSQL… extension methods provided.
+7. Provide me feedback
