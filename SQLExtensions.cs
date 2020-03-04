@@ -2,7 +2,7 @@
 using System.Data;
 using System.Globalization;
 using System.Text.RegularExpressions;
-using ConsoleApp1;
+using SampleSQLInjectionDetectionApp;
 #if NETCOREAPP
 using Microsoft.Data.SqlClient;
 #else
