@@ -58,6 +58,8 @@ public static class SQLExtensions
 		//Check the ascii regex first because the subsequent steps may modify the sql and remove ascii chracters
 		CheckSQLForIllegalKeywords(sql, AsciiRegex);
 		string newSQL = ExtractProperlyEncodedStringsAndComments(sql);
+		//Above turns:	SELECT * FROM TABLE WHERE COMMENT LIKE '%delete%'
+		//		to:		SELECT * FROM TABLE WHERE COMMENT LIKE  
 		CheckSQLForIllegalKeywords(newSQL, keywordRegex);
 		return true;
 	}

@@ -2,9 +2,15 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>SampleSQLInjectionDetectionApp</AssemblyName>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="UnitTestProject1\**" />
+    <EmbeddedResource Remove="UnitTestProject1\**" />
+    <None Remove="UnitTestProject1\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="1.1.1" />
