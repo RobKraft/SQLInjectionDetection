@@ -20,7 +20,7 @@ jobs:
       run: msbuild ConsoleApp1.sln /p:Configuration=Release /p:DeployOnBuild=false /p:PublishProfile=FolderProfile
  
     - name: Test with the dotnet CLI
-      run: dotnet test UnitTestProject1.csproj --logger trx
+      run: dotnet test UnitTestProject1/UnitTestProject1.csproj --logger trx
            
     - name: Publish Test Results
       if: always()
