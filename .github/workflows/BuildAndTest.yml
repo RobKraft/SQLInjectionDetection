@@ -1,12 +1,8 @@
 name: Build Web App
- 
 on: [push]
- 
 jobs:
   build:
- 
     runs-on: windows-latest
- 
     steps:
     - uses: actions/checkout@v1
       name: Checkout Code
