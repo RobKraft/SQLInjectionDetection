@@ -1,0 +1,30 @@
+name: Build Web App
+on: [push]
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+      name: Checkout Code
+     
+    - name: Setup MSBuild Path
+      uses: microsoft/setup-msbuild@v1.0.2
+       
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.5
+     
+    - name: Restore NuGet Packages
+      run: nuget restore ConsoleApp1.sln
+ 
+    - name: Build and Publish Web App
+      run: msbuild ConsoleApp1.sln /p:Configuration=Release /p:DeployOnBuild=false /p:PublishProfile=FolderProfile
+ 
+    - name: Test with the dotnet CLI
+      run: dotnet test UnitTestProject1/UnitTestProject1.csproj --logger trx
+           
+    - name: Publish Test Results
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-results
+        path: '**/*.trx'
